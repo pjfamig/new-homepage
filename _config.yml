@@ -1,0 +1,10 @@
+name: "Paul Famiglietti - Homepage"
+description: "Learn about me, my current projects, blog posts, and get in touch."
+
+url: "http://localhost:4000"
+
+paginate: 4
+
+markdown: rdiscount
+permalink: pretty
+pygments: true

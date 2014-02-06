@@ -1,0 +1,58 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased
+}
+
+.container-fluid, .row {
+   height: 100%;
+}
+
+
+/* Sidebar */
+
+
+.col-md-3 {
+	padding: 40px;
+    height: 100%;
+    overflow: auto;
+    *zoom:1;
+}
+
+.col-md-3 p {
+	color: #FFF;
+}
+
+.col-md-3 a {
+	color: #FFF;
+}
+
+.col-md-3 a:hover {
+	color: #CCC;
+}
+
+.col-md-9 {
+	padding: 40px;
+}
+
+h3 {
+	color: #FFF;
+}
+
+
+.avatar-frame,.avatar-frame img{
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+	-webkit-border-radius: 150px; /* Saf3+, Chrome */
+	border-radius: 150px; /* Opera 10.5, IE 9 */
+	/*-moz-border-radius: 30px;  Disabled for FF1+ */
+}
+	
+	
+	
+	
