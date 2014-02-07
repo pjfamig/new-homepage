@@ -4,6 +4,18 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+	<script>
+	$(document).ready(function() {
+	
+	$("li").click(function () {
+	     // remove classes from all
+	     $("li").removeClass(".active");
+	     // add class to the one we clicked
+	     $(this).addClass(".active");
+	});
+	
+	});
+	</script>
   </body>
 </html>
