@@ -3,11 +3,9 @@ title: A New Look at RAND Patent Damages
 layout: post
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elemen\
-tum leo non felis porttitor vulputate. Nulla ipsum quam, auctor ut hendreri\
-t quis, tincidunt eu metus. Quisque ipsum tellus, semper a tempus quis, int\
-erdum vel magna. Cras a nisl diam, in accumsan augue. Pellentesque varius n\
-ibh eu diam tempor rhoncus.
+Erat pellentesque ornare gravida, ipsum est luctus neque, eget condimentum \
+urna arcu sit amet felis. Class aptent taciti sociosqu ad litora torquent per conubia\
+ nostra, per inceptos himenaeos.
 
 ## Pellentesque sollicitudin
 

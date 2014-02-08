@@ -4,6 +4,8 @@ description: "Learn about me, my current projects, blog posts, and get in touch.
 url: "http://localhost:4000"
 
 paginate: 4
+paginate_path: "blog/page:num"
+
 
 markdown: rdiscount
 permalink: pretty

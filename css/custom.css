@@ -17,6 +17,10 @@ hr {
 	border-color: #CCC;
 }
 
+@media (min-width: 992px) {
+}
+
+
 /* Sidebar */
 
 @media (min-width: 992px) {
@@ -27,18 +31,21 @@ hr {
     bottom: 0;
     z-index: 1000;
     display: block;
-    background-color: #275379; /* 428bca */
+    background-color: #275379 ; /* #275379 428bca */
     border-right: 1px solid #eee;
-  box-shadow: inset 0 -2px 15px rgba(0,0,0,.2);
+    box-shadow: inset 0 -2px 15px rgba(0,0,0,.2);
 
+  }
+  
+  .form-control {
+	width:50%;
   }
 }
 
 .sidebar {
-    background-color: #275379;
+    background-color: #275379 ; /* #275379 428bca */
 	padding: 40px;
 	box-shadow: inset 0 -2px 15px rgba(0,0,0,.2);
-  
 }
 
 
@@ -64,6 +71,7 @@ hr {
 
 .main {
   padding: 40px;
+
 }
 @media (min-width: 768px) {
   .main {
@@ -84,10 +92,10 @@ hr {
 .col-md-9 {
 }
 
-h3 {
+.col-md-3 h3 {
 	color: #FFF;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
-
 
 .avatar-frame,.avatar-frame img{
 	margin: 0 auto;
