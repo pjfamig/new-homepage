@@ -40,6 +40,7 @@ hr {
   .form-control {
 	width:50%;
   }
+
 }
 
 .sidebar {
@@ -55,6 +56,8 @@ hr {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
 }
+
+
 .nav-sidebar > li > a {
   padding-left: 20px;
   padding-right: 20px;
@@ -64,6 +67,8 @@ hr {
   background-color: #CCC;
 }
 
+.nav-sidebar li {
+}
 
 .nav-sidebar > li > a:hover {
 	background-color: #346fa1;
