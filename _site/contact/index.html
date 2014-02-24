@@ -15,6 +15,10 @@
 	<!-- My custom CSS -->
 	<link href="/css/custom.css" rel="stylesheet">
 	
+	<!-- validate.js -->
+	<script type="text/javascript" src="/js/validate.min.js"></script>
+	
+	
     <!-- Custom styles for this template -->
     <link href="/css/starter-template.css" rel="stylesheet">
 
@@ -35,7 +39,7 @@
 		
 
 <div class="avatar-frame"><a href="/"><img src="/images/paul.jpg"></a></div>
-<center><h3>Paul Famiglietti</h3></center>
+<h1>Paul Famiglietti</h1>
 
 <ul class="nav nav-sidebar">
     <li><a href="/about">About</a></li>
@@ -55,19 +59,28 @@
 
 
 <div class="row">
-<form action="http://getsimpleform.com/messages?form_api_token=03c0f6779ee6fe1dd9dcd449fdc86812" method="post">
+
+<div class="col-xs-12">
+
+<!-- <div class="success_box">All of the fields were successfully validated!</div> -->
+<div class="error_box"></div>
+    
+<form name="contact_form" action="http://getsimpleform.com/messages?form_api_token=03c0f6779ee6fe1dd9dcd449fdc86812" method="POST">
 
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
   <input type='hidden' name='redirect_to' value='http://localhost:4000/contact/thank-you/' />
 
   <!-- all your input fields here.... -->   
-    <div class="col-xs-12">
-        <p><input type="text" class="form-control" placeholder="Name" name="name" style=""></p>
+        <p><input type="text" class="form-control" placeholder="Name" name="name"></p>
+        <p><input type="text" class="form-control" placeholder="Email" name="email"></p>
         <p><textarea name="message" placeholder="Enter a message..." class="form-control" rows="9"></textarea></p>
       <p><input type='submit' value='Send' class="btn btn-small btn-success"/></p>
     </div>
 </form>
+
 </div>
+
+
 
 
 	<small><span class="glyphicon glyphicon-copyright-mark"></span> 2014 | Powered by <a href="http://jekyllrb.com/">Jekyll</a></small>
@@ -82,17 +95,37 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
 	<script>
-	$(document).ready(function() {
-	
-	$("li").click(function () {
-	     // remove classes from all
-	     $("li").removeClass(".active");
-	     // add class to the one we clicked
-	     $(this).addClass(".active");
+	var validator = new FormValidator('contact_form', [{
+	    name: 'name',
+	    rules: 'required'
+	}, {
+	    name: 'email',
+	    rules: 'required|valid_email'
+	}, {
+	    name: 'message',
+	    rules: 'required|min_length[8]'
+	}], function(errors, evt) {
+		// Show the errors
+		var SELECTOR_ERRORS = $('.error_box'), SELECTOR_SUCCESS = $('.success_box');
+		
+		if (errors.length > 0) {
+			SELECTOR_ERRORS.empty();
+			
+			for (var i=0, errorLength = errors.length; i < errorLength; i++) {
+				SELECTOR_ERRORS.append(errors[i].message + '<br />');
+			}
+			
+			SELECTOR_SUCCESS.css({ display: 'none' });
+			SELECTOR_ERRORS.fadeIn(200);
+		} else {
+			SELECTOR_ERRORS.css({ display: 'none' });
+			SELECTOR_SUCCESS.fadeIn(200);
+		}	
 	});
-	
-	});
+
 	</script>
+
   </body>
 </html>

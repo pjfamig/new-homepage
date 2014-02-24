@@ -15,6 +15,10 @@
 	<!-- My custom CSS -->
 	<link href="/css/custom.css" rel="stylesheet">
 	
+	<!-- validate.js -->
+	<script type="text/javascript" src="/js/validate.min.js"></script>
+	
+	
     <!-- Custom styles for this template -->
     <link href="/css/starter-template.css" rel="stylesheet">
 
@@ -35,7 +39,7 @@
 		
 
 <div class="avatar-frame"><a href="/"><img src="/images/paul.jpg"></a></div>
-<center><h3>Paul Famiglietti</h3></center>
+<h1>Paul Famiglietti</h1>
 
 <ul class="nav nav-sidebar">
     <li><a href="/about">About</a></li>
@@ -53,7 +57,7 @@
 
 <div class="row-fluid">
   <div class="">
-    <h2>Consectetur Elit</h2>
+    <a href="/2014/01/31/yesterdays-post/"><h2>Consectetur Elit</h2></a>
     <p class="muted">January 31, 2014</p>
 	<p><p>Sed id lacus eu urna ullamcorper mattis. Etiam ut nunc erat. Sed et velit a\
 c nisi mattis mollis tempus id nulla. In varius fermentum posuere. Vivamus \
@@ -73,7 +77,7 @@ pien in turpis consequat pharetra sit amet quis elit.</p>
 
 <div class="row-fluid">
   <div class="">
-    <h2>Consectetur Elit</h2>
+    <a href="/2014/01/30/yesterdays-post/"><h2>Consectetur Elit</h2></a>
     <p class="muted">January 30, 2014</p>
 	<p><p>Sed id lacus eu urna ullamcorper mattis. Etiam ut nunc erat. Sed et velit a\
 c nisi mattis mollis tempus id nulla. In varius fermentum posuere. Vivamus \
@@ -93,7 +97,7 @@ pien in turpis consequat pharetra sit amet quis elit.</p>
 
 <div class="row-fluid">
   <div class="">
-    <h2>Consectetur Elit</h2>
+    <a href="/2014/01/29/yesterdays-post/"><h2>Consectetur Elit</h2></a>
     <p class="muted">January 29, 2014</p>
 	<p><p>Sed id lacus eu urna ullamcorper mattis. Etiam ut nunc erat. Sed et velit a\
 c nisi mattis mollis tempus id nulla. In varius fermentum posuere. Vivamus \
@@ -113,7 +117,7 @@ pien in turpis consequat pharetra sit amet quis elit.</p>
 
 <div class="row-fluid">
   <div class="">
-    <h2>Consectetur Elit</h2>
+    <a href="/2014/01/27/yesterdays-post/"><h2>Consectetur Elit</h2></a>
     <p class="muted">January 27, 2014</p>
 	<p><p>Sed id lacus eu urna ullamcorper mattis. Etiam ut nunc erat. Sed et velit a\
 c nisi mattis mollis tempus id nulla. In varius fermentum posuere. Vivamus \
@@ -171,17 +175,37 @@ pien in turpis consequat pharetra sit amet quis elit.</p>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+
 	<script>
-	$(document).ready(function() {
-	
-	$("li").click(function () {
-	     // remove classes from all
-	     $("li").removeClass(".active");
-	     // add class to the one we clicked
-	     $(this).addClass(".active");
+	var validator = new FormValidator('contact_form', [{
+	    name: 'name',
+	    rules: 'required'
+	}, {
+	    name: 'email',
+	    rules: 'required|valid_email'
+	}, {
+	    name: 'message',
+	    rules: 'required|min_length[8]'
+	}], function(errors, evt) {
+		// Show the errors
+		var SELECTOR_ERRORS = $('.error_box'), SELECTOR_SUCCESS = $('.success_box');
+		
+		if (errors.length > 0) {
+			SELECTOR_ERRORS.empty();
+			
+			for (var i=0, errorLength = errors.length; i < errorLength; i++) {
+				SELECTOR_ERRORS.append(errors[i].message + '<br />');
+			}
+			
+			SELECTOR_SUCCESS.css({ display: 'none' });
+			SELECTOR_ERRORS.fadeIn(200);
+		} else {
+			SELECTOR_ERRORS.css({ display: 'none' });
+			SELECTOR_SUCCESS.fadeIn(200);
+		}	
 	});
-	
-	});
+
 	</script>
+
   </body>
 </html>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Current Projects
+title: Projects
 ---
 
 <div class="row-fluid">
